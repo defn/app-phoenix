@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+function main {
+  if [[ -n "$(mix archive | awk '$1 == "*" && $2 ~ /^phoenix_new/ { print $2 }')" ]]; then
+    return 1
+  else
+    return 0
+  fi
+}
+
+source sub "$0" "$@"
