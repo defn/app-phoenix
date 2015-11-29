@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function main {
-  if [[ -n "$(mix archive | awk '$1 == "*" && $2 ~ /^phoenix_new/ { print $2 }')" ]]; then
+  if [[ -n "$(mix archive 2>&- | awk '$1 == "*" && $2 ~ /^phoenix_new/ { print $2 }')" ]]; then
     return 1
   else
     return 0
