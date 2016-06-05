@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function main {
-  local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
+  local shome="${_phoenix_home:-"$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"}"
   source "$shome/script/profile"
 
   if [[ -n "$(mix archive 2>&- | awk '$1 == "*" && $2 ~ /^phoenix_new/ { print $2 }')" ]]; then
