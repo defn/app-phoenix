@@ -3,6 +3,8 @@
 function profile {
   local shome="${_phoenix_home:-"$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"}"
   PATH="$shome/bin:$shome/install/bin:$PATH"
+
+  PHOENIX_VERSION='1.2.1'
 }
 
 profile
