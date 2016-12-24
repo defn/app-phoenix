@@ -6,7 +6,7 @@ function bootstrap {
 
   case "$(uname -s)" in
     Linux)
-      sudo aptitude install -y inotify-tools
+      sudo -E aptitude install -y inotify-tools
       ;;
   esac
 
